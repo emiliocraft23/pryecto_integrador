@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: secure_auth_api
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+    volumes:
+      - ./auth_api.db:/app/auth_api.db
+    restart: always
