@@ -7,7 +7,6 @@ class User(SQLModel, table=True):
     username: str = Field(index=True, unique=True)
     hashed_password: str
 
-
 class UserCreate(BaseModel):
     username: str
     password: str
@@ -15,3 +14,4 @@ class UserCreate(BaseModel):
 class UserResponse(BaseModel):
     id: int
     username: str
+
